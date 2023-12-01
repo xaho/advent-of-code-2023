@@ -1,3 +1,6 @@
+# IntelliJ folder
+.idea
+
 # Logs
 logs
 *.log
