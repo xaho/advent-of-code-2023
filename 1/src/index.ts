@@ -9,7 +9,7 @@ function getFirstAndLast(line: string) {
     return {first, last}
 }
 
-const translations : {[key: string]: string} = {
+const translations: { [key: string]: string } = {
     'one': '1',
     'two': '2',
     'three': '3',
@@ -28,14 +28,14 @@ const sum = fs.readFileSync('./resources/input.txt', 'utf-8')
         if (!part2) return line;
         const regex = /(one|two|three|four|five|six|seven|eight|nine)/g;
         let match;
-        while(match = regex.exec(line)) {
-            line = line.substring(0,match.index) + translations[match[0]] + line.substring(match.index)
+        while (match = regex.exec(line)) {
+            line = line.substring(0, match.index) + translations[match[0]] + line.substring(match.index)
         }
         return line;
     })
     .reduce((acc, line) => {
         const {first, last} = getFirstAndLast(line);
-        return acc+ +(first+last);
+        return acc + +(first + last);
     }, 0);
 
 console.log(sum)

@@ -1,6 +1,5 @@
 import * as fs from 'fs'
 
-const lineRegex = /Game (\d+): (?<asdf>(\d+) (red|blue|green))+/;
 const subsetRegex = /(?<amount>\d+) (?<color>red|green|blue)/;
 let games = fs.readFileSync('resources/input.txt', 'utf-8')
     .split(/\r?\n/)
